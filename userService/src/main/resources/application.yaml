@@ -1,0 +1,14 @@
+server:
+  port: 9091
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/roles-test

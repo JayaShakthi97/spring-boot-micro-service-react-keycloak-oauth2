@@ -1,0 +1,37 @@
+server:
+  port: 9090
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/roles-test
+  cloud:
+    gateway:
+      routes:
+        - id: user-resource-server
+          uri: http://localhost:9091
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<REST>.*), /$\{REST}
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: payment-resource-server
+          uri: http://localhost:9092
+          predicates:
+            - Path=/payment/**
+          filters:
+            - RewritePath=/payment/(?<REST>.*), /$\{REST}
+
+# Enable these to debug the Authorization flow
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
