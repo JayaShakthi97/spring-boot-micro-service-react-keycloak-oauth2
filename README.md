@@ -3,7 +3,13 @@
 ### Keycloak server
 1. Start keycloak server and create a realm.
 2. Create a public client for the React app.
-3. Visit Realm settings and enable user registration.
+
+Creating a public client,
+
+https://user-images.githubusercontent.com/37938529/234466949-1763f3d9-f515-4ec4-b634-4219574859ab.mov
+
+
+4. Visit Realm settings and enable user registration.<br>
 ![image](https://user-images.githubusercontent.com/37938529/234357747-b0832570-f0e0-42ed-93b4-a8c004bb5a3a.png)
 
 
@@ -16,7 +22,7 @@
 ### Frontend
 1. `cd ./react-frontend`
 2. Install dependencies `npm ci`
-3. Download the keycloak.json file from the configured public client in keycloak.
+3. Download the keycloak.json file from the configured public client in keycloak.<br>
 ![Screenshot 2023-04-25 at 11 05 59 PM](https://user-images.githubusercontent.com/37938529/234357400-2f8f84ba-75de-4deb-8c17-db1285a18182.png)
 
 
